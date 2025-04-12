@@ -1,0 +1,62 @@
+.
+├── README.md
+├── bun.lock
+├── eslint.config.js
+├── estructura.txt
+├── estructuraCompleta.txt
+├── index.html
+├── package.json
+├── public
+│   └── vite.svg
+├── src
+│   ├── app
+│   │   ├── App.scss
+│   │   ├── App.tsx
+│   │   └── index.ts
+│   ├── assets
+│   │   └── react.svg
+│   ├── constants
+│   │   └── index.ts
+│   ├── index.scss
+│   ├── main.tsx
+│   ├── presentation
+│   │   ├── components
+│   │   │   ├── atoms
+│   │   │   │   └── index.ts
+│   │   │   ├── index.ts
+│   │   │   ├── molecules
+│   │   │   │   └── index.ts
+│   │   │   └── organisms
+│   │   │       └── index.ts
+│   │   ├── context
+│   │   ├── layouts
+│   │   │   └── index.ts
+│   │   ├── pages
+│   │   ├── routes
+│   │   ├── styles
+│   │   │   ├── _base.scss
+│   │   │   ├── _mixins.scss
+│   │   │   ├── _reset.scss
+│   │   │   ├── _variables.scss
+│   │   │   └── index.scss
+│   │   └── viewmodels
+│   │       └── index.ts
+│   ├── services
+│   │   └── api
+│   │       └── index.ts
+│   ├── store
+│   │   ├── context
+│   │   │   └── index.ts
+│   │   └── zustand
+│   │       └── index.ts
+│   ├── types
+│   │   └── index.ts
+│   ├── utils
+│   │   └── index.ts
+│   └── vite-env.d.ts
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.node.json
+└── vite.config.ts
+
+23 directories, 36 files
