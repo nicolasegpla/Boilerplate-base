@@ -1,23 +1,23 @@
-# 🧱 Rick Project — Boilerplate Frontend Base
+# 🧱 Rick Project — Frontend Boilerplate Base
 
-Este proyecto es una base personalizada en React + TypeScript diseñada para ser ligera, moderna y altamente productiva desde el minuto uno.  
-Incluye un setup completo con ESLint, Prettier, Barrel Exports, VSCode configurado, y uso de Sass para estilos globales.
+This project is a custom base using React + TypeScript designed to be lightweight, modern, and highly productive from minute one.  
+It includes a complete setup with ESLint, Prettier, Barrel Exports, VSCode settings, and Sass for global styling.
 
 ---
 
-## 🚀 Características
+## 🚀 Features
 
 - ✅ React + Vite + TypeScript
-- 🎯 Arquitectura simple y familiar
-- 🧼 ESLint con reglas de buenas prácticas
-- 💅 Prettier para formateo automático
-- 📆 Soporte para Barrel Files
-- 💻 Estilos globales con Sass
-- ⚡ VSCode configurado para autoformatear al guardar
+- 🎯 Simple and familiar architecture
+- 🧼 ESLint with best practice rules
+- 💅 Prettier for automatic formatting
+- 📦 Barrel Files support
+- 💻 Global styles with Sass
+- ⚡ VSCode configured for format-on-save
 
 ---
 
-## 📁 Estructura Final del Proyecto
+## 📁 Final Project Structure
 
 ```
 .
@@ -84,17 +84,17 @@ Incluye un setup completo con ESLint, Prettier, Barrel Exports, VSCode configura
 
 ---
 
-## 🔧 Configuración ESLint
+## 🔧 ESLint Configuration
 
-ESLint está configurado para trabajar con:
+ESLint is configured to work with:
 
 - TypeScript
 - React
 - Hooks
 - Import sorting
-- Integración con Prettier
+- Prettier integration
 
-### 📦 Instalación de dependencias
+### 📦 Install Dependencies
 
 ```bash
 bun add -d eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser \
@@ -102,7 +102,7 @@ eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-jsx-a11y eslint-plug
 eslint-plugin-prettier eslint-config-prettier
 ```
 
-### 📄 eslint.config.js (formato ESM)
+### 📄 `eslint.config.js` (ESM format)
 
 ```js
 // eslint.config.js
@@ -171,7 +171,7 @@ export default [
 
 ---
 
-## 🎨 Configuración Prettier
+## 🎨 Prettier Configuration
 
 ### 📄 `.prettierrc`
 
@@ -201,9 +201,9 @@ coverage
 
 ---
 
-## 💻 VSCode configurado
+## 💻 VSCode Setup
 
-Crea este archivo en `.vscode/settings.json`:
+Create `.vscode/settings.json`:
 
 ```json
 {
@@ -225,17 +225,17 @@ Crea este archivo en `.vscode/settings.json`:
 
 ---
 
-## 🔀 Scripts disponibles
+## 🔀 Available Scripts
 
 ```bash
-bun run lint        # Corre ESLint
-bun run lint:fix    # Arregla automáticamente lo que puede
-bun run format      # Corre Prettier en todos los archivos
+bun run lint        # Run ESLint
+bun run lint:fix    # Automatically fix issues
+bun run format      # Run Prettier on all files
 ```
 
 ---
 
-## 📦 Alias configurado en `vite.config.ts`
+## 📦 Alias Configuration in `vite.config.ts`
 
 ```ts
 import { defineConfig } from 'vite';
@@ -256,7 +256,7 @@ export default defineConfig({
 });
 ```
 
-Usás imports así:
+### Example Usage:
 
 ```ts
 import { App } from '@/app';
@@ -265,67 +265,86 @@ import { Button } from '@/presentation/components/atoms';
 
 ---
 
-## 📦 package.json — Descripción y comandos
+## 📦 `package.json` — Description & Commands
 
-Este proyecto tiene una configuración de `package.json` simple pero poderosa para empezar a trabajar con React + TypeScript + Sass y mantener el código limpio.
+This project comes with a clean and minimal `package.json` setup ideal for working with React + TS + Sass.
 
-### 📋 Información general
+### 📋 General Info
 
-| Campo   | Valor  |
+| Field   | Value  |
 | ------- | ------ |
 | name    | rick   |
 | version | 0.0.0  |
 | private | true   |
 | type    | module |
 
-### 🔧 Scripts disponibles
+### 🔧 Available Scripts
 
-| Script     | Descripción                                                   |
-| ---------- | ------------------------------------------------------------- |
-| `dev`      | Inicia el servidor de desarrollo con Vite                     |
-| `build`    | Compila TypeScript y genera el build con Vite                 |
-| `preview`  | Previsualiza el build generado                                |
-| `format`   | Corre Prettier sobre todos los archivos                       |
-| `lint`     | Ejecuta ESLint para verificar errores y warnings              |
-| `lint:fix` | Ejecuta ESLint y corrige automáticamente los errores posibles |
+| Script     | Description                             |
+| ---------- | --------------------------------------- |
+| `dev`      | Starts Vite dev server                  |
+| `build`    | Builds TypeScript and bundles with Vite |
+| `preview`  | Previews production build               |
+| `format`   | Runs Prettier formatting                |
+| `lint`     | Runs ESLint                             |
+| `lint:fix` | Fixes ESLint issues automatically       |
 
-### 📦 Dependencias destacadas
+### 📦 Key Dependencies
 
-- **react / react-dom** → Core de la aplicación con React 19
-- **sass** → Soporte para SCSS y variables de estilo
+- **react / react-dom** → React 19 core
+- **sass** → SCSS support
 
-### 🧪 DevDependencies destacadas
+### 🧪 Dev Dependencies
 
-- **eslint + plugins** → Linting de código moderno y best practices
-- **prettier + eslint-plugin-prettier** → Formateo automático con integración
-- **@vitejs/plugin-react** → Plugin de Vite para React
-- **typescript + @types/** → Tipado y soporte completo de TS
+- **eslint + plugins** → Linting & rules
+- **prettier + integration** → Formatting
+- **@vitejs/plugin-react** → React plugin for Vite
+- **typescript + types** → Full TS support
 
-### 🛠 Instalación con Bun (recomendado)
+### 🛠 Install with Bun (recommended)
 
 ```bash
 bun install
 ```
 
-Si usás npm o yarn:
+Or with npm/yarn:
 
 ```bash
 npm install
-# o
+# or
 yarn install
 ```
 
 ---
 
-## 🧐 Conclusión
+## 🧪 How to Use This Boilerplate
 
-Con esta base:
+### ✅ Recommended: GitHub Template
 
-- Tenés una estructura clara y familiar
-- Código limpio desde el minuto uno
-- Autoformato y linting integrados
-- Preparado para escalar y trabajar cómodo
+1. Go to the repo on GitHub.
+2. Click the green `Use this template` button.
+3. Choose a name for your new repository.
+4. Clone it to your local machine:
+
+```bash
+git clone https://github.com/your-username/new-project.git
+cd new-project
+bun install # or npm install / yarn install
+bun run dev
+```
+
+That’s it! You have a fresh, clean project ready to build on.
 
 ---
 
-> Esta es tu nueva línea de salida para todos tus proyectos frontend. ¡A partir de acá, a construir sin fricción! 🚀
+## 🧐 Conclusion
+
+With this base:
+
+- You get a familiar, clean structure
+- Autoformat and linting out of the box
+- Ready to scale and ship fast
+
+---
+
+> This is your new launchpad for all frontend projects. Let’s build! 🚀
