@@ -14,6 +14,7 @@ It includes a complete setup with ESLint, Prettier, Barrel Exports, VSCode setti
 - 📦 Barrel Files support
 - 💻 Global styles with Sass
 - ⚡ VSCode configured for format-on-save
+- 📚 Storybook for isolated UI component development
 
 ---
 
@@ -105,7 +106,6 @@ eslint-plugin-prettier eslint-config-prettier
 ### 📄 `eslint.config.js` (ESM format)
 
 ```js
-// eslint.config.js
 import js from '@eslint/js';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
@@ -222,6 +222,61 @@ Create `.vscode/settings.json`:
     "prettier.useTabs": false
 }
 ```
+
+---
+
+## 📚 Storybook
+
+This project includes **Storybook** preconfigured for documenting and testing components in isolation.
+
+### 🧱 Structure
+
+Stories live alongside components using [Atomic Design](https://bradfrost.com/blog/post/atomic-web-design/) principles:
+
+```
+src/
+└── presentation/
+    └── components/
+        ├── atoms/
+        │   ├── Button.tsx
+        │   └── Button.stories.tsx
+        ├── molecules/
+        └── organisms/
+```
+
+Storybook config files:
+
+```
+.storybook/
+├── main.ts        # Main config: stories, plugins, alias
+├── preview.ts     # Global styles, decorators, parameters
+└── tsconfig.json  # Extends base tsconfig
+```
+
+### 🚀 Run Storybook
+
+```bash
+bun run storybook
+# or
+npm run storybook
+# or
+yarn storybook
+```
+
+### 🏗️ Build static version
+
+```bash
+bun run build-storybook
+```
+
+The static files will be available in the `storybook-static/` folder. Perfect for publishing to GitHub Pages or any CDN.
+
+### 💡 Features
+
+- Alias `@` support for clean imports
+- Global styles via `index.scss`
+- Ready for addons and visual testing
+- Easily extendable with decorators or themes
 
 ---
 
