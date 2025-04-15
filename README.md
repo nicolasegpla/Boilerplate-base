@@ -26,7 +26,7 @@ It includes a complete setup with ESLint, Prettier, Barrel Exports, VSCode setti
 ├── bun.lock
 ├── eslint.config.js
 ├── estructura.txt
-├── estructuraCompleta.txt
+├── generate-component.ts
 ├── index.html
 ├── package.json
 ├── public
@@ -80,7 +80,8 @@ It includes a complete setup with ESLint, Prettier, Barrel Exports, VSCode setti
 ├── tsconfig.app.json
 ├── tsconfig.json
 ├── tsconfig.node.json
-└── vite.config.ts
+├── vite.config.ts
+└── vitest.workspace.ts
 ```
 
 ---
