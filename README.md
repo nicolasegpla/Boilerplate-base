@@ -495,14 +495,15 @@ In many cases, Bun is up to 20x faster.
 
 🛠️ 3. Batteries included
 
-    Bun isn’t just a package manager — it’s a toolkit:
-    Tool	Replaces...
-    | bun           | npm, yarn                               |
-    | ----------    | --------------------------------------- |
-    | `bun run`     | npm run                                 |
-    | `bun test`    | jest, vitest (partial)                  |
-    | `bun serve`   | webpack-dev-server, etc                 |
-    | `bun install` | npm install                             |
+Bun isn’t just a package manager — it’s a toolkit:
+
+| Tool          | Replaces...             |
+| ------------- | ----------------------- |
+| `bun`         | npm, yarn               |
+| `bun run`     | npm run                 |
+| `bun test`    | jest, vitest (partial)  |
+| `bun serve`   | webpack-dev-server, etc |
+| `bun install` | npm install             |
 
 Everything works out of the box, no extra setup needed.
 🤝 4. Fully compatible with npm
