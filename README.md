@@ -342,13 +342,13 @@ import { BrowserRouter } from 'react-router-dom';
 
 ```tsx
 // src/presentation/routes/AppRoutes.tsx
-import { Route, Routes } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import HomePage from '@/presentation/pages/HomePage';
 
 export const AppRoutes = () => (
-    <Routes>
+    <BrowserRouter>
         <Route path="/" element={<HomePage />} />
-    </Routes>
+    </BrowserRouter>
 );
 ```
 
