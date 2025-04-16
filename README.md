@@ -396,54 +396,71 @@ import { Button } from '@/presentation/components/atoms';
 
 ## 📦 `package.json` — Description & Commands
 
-This project comes with a clean and minimal `package.json` setup ideal for working with React + TS + Sass.
+This project comes with a clean and extended `package.json` setup, tailored for productivity with React, TypeScript, Sass, Zustand, Storybook, and routing with React Router DOM.
 
 ### 📋 General Info
 
-| Field   | Value  |
-| ------- | ------ |
-| name    | rick   |
-| version | 0.0.0  |
-| private | true   |
-| type    | module |
+|     Field | Value  |
+| --------: | :----- |
+|    `name` | rick   |
+| `version` | 0.0.0  |
+| `private` | true   |
+|    `type` | module |
+
+---
 
 ### 🔧 Available Scripts
 
-| Script     | Description                             |
-| ---------- | --------------------------------------- |
-| `dev`      | Starts Vite dev server                  |
-| `build`    | Builds TypeScript and bundles with Vite |
-| `preview`  | Previews production build               |
-| `format`   | Runs Prettier formatting                |
-| `lint`     | Runs ESLint                             |
-| `lint:fix` | Fixes ESLint issues automatically       |
+| Script            | Description                                                |
+| ----------------- | ---------------------------------------------------------- |
+| `dev`             | Starts Vite development server                             |
+| `build`           | Compiles TypeScript and creates production build with Vite |
+| `preview`         | Previews the production build                              |
+| `format`          | Runs Prettier formatting over the project                  |
+| `lint`            | Runs ESLint                                                |
+| `lint:fix`        | Automatically fixes lint issues                            |
+| `storybook`       | Launches Storybook locally                                 |
+| `build-storybook` | Generates static Storybook build                           |
+| `generate`        | Creates a component + SCSS + Storybook with custom script  |
+
+---
 
 ### 📦 Key Dependencies
 
-- **react / react-dom** → React 19 core
-- **sass** → SCSS support
-- **zustand** → Global state management
+| Package              | Purpose                     |
+| -------------------- | --------------------------- |
+| `react`, `react-dom` | Core libraries for React 19 |
+| `react-router-dom`   | Declarative routing         |
+| `zustand`            | Global state management     |
+| `sass`               | SCSS support for styling    |
 
-### 🧪 Dev Dependencies
+---
 
-- **eslint + plugins** → Linting & rules
-- **prettier + integration** → Formatting
-- **@vitejs/plugin-react** → React plugin for Vite
-- **typescript + types** → Full TS support
+### 🧪 Dev Dependencies Highlights
+
+| Package                | Purpose                                |
+| ---------------------- | -------------------------------------- |
+| `eslint` + plugins     | Linting with best practices            |
+| `prettier`             | Auto formatting                        |
+| `typescript` + types   | TypeScript support                     |
+| `@vitejs/plugin-react` | React support in Vite                  |
+| `storybook` + addons   | Component documentation and playground |
+| `vitest`, `playwright` | Testing (unit + e2e)                   |
+| `@types/bun`           | Bun runtime types                      |
+
+---
 
 ### 🛠️ Install with Bun (recommended)
 
-```bash
+````bash
 bun install
-```
 
-Or with npm/yarn:
+- Or use npm/yarn if you prefer:
 
-```bash
 npm install
 # or
 yarn install
-```
+
 
 ---
 
@@ -461,7 +478,7 @@ git clone https://github.com/your-username/new-project.git
 cd new-project
 bun install # or npm install / yarn install
 bun run dev
-```
+````
 
 That’s it! You have a fresh, clean project ready to build on.
 
