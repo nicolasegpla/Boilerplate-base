@@ -467,6 +467,78 @@ That’s it! You have a fresh, clean project ready to build on.
 
 ---
 
+⚡ Why Bun instead of npm?
+
+This project uses Bun as the default package manager and runtime. Here's why it's a game-changer for modern frontend workflows:
+⚡ 1. Ridiculously Fast
+
+    Bun is significantly faster than npm or yarn for both installing packages and running scripts.
+
+    It's built with low-level performance in mind (written in Zig).
+
+📦 Example:
+
+bun install
+
+# vs
+
+npm install
+
+In many cases, Bun is up to 20x faster.
+🧼 2. Cleaner and leaner
+
+    Bun doesn't generate a massive node_modules directory.
+
+    No noisy package-lock.json or yarn.lock.
+
+    Installations are deterministic and super fast from the first run.
+
+🛠️ 3. Batteries included
+
+    Bun isn’t just a package manager — it’s a toolkit:
+    Tool	Replaces...
+    | bun           | npm, yarn                               |
+    | ----------    | --------------------------------------- |
+    | `bun run`     | npm run                                 |
+    | `bun test`    | jest, vitest (partial)                  |
+    | `bun serve`   | webpack-dev-server, etc                 |
+    | `bun install` | npm install                             |
+
+Everything works out of the box, no extra setup needed.
+🤝 4. Fully compatible with npm
+
+    Bun uses the npm registry, so you can install any package like you're used to:
+
+bun add react react-dom
+
+🚀 5. Perfect for boilerplates
+
+For a project like Rick Boilerplate, Bun provides:
+
+    Faster setup times
+
+    Better DX (Developer Experience)
+
+    Cleaner scripts
+
+    Less config overhead, more coding
+
+🧪 What if you prefer npm or yarn?
+
+No problem. The project isn't Bun-dependent — you can still run:
+
+npm install
+npm run dev
+
+Everything will just work.
+TL;DR
+
+    Bun is fast, modern, and all-in-one.
+    It’s the Ferrari of JavaScript runtimes.
+    But if you’re more comfortable with a minivan — npm is still welcome. 🛻
+
+---
+
 ## 🤔 Conclusion
 
 With this base:
