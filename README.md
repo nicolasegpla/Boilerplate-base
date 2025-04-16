@@ -1,7 +1,7 @@
 # 🧱 Rick Project — Frontend Boilerplate Base
 
 This project is a custom base using React + TypeScript designed to be lightweight, modern, and highly productive from minute one.  
-It includes a complete setup with ESLint, Prettier, Barrel Exports, VSCode settings, and Sass for global styling.
+It includes a complete setup with ESLint, Prettier, Barrel Exports, VSCode settings, Sass for global styling, Zustand for state management, and Storybook.
 
 ---
 
@@ -11,10 +11,12 @@ It includes a complete setup with ESLint, Prettier, Barrel Exports, VSCode setti
 - 🎯 Simple and familiar architecture
 - 🧼 ESLint with best practice rules
 - 💅 Prettier for automatic formatting
-- 📦 Barrel Files support
+- 🛆 Barrel Files support
 - 💻 Global styles with Sass
 - ⚡ VSCode configured for format-on-save
 - 📚 Storybook for isolated UI component development
+- 🔋 Zustand for lightweight global state management
+- 🌐 React Router DOM for routing
 
 ---
 
@@ -96,7 +98,7 @@ ESLint is configured to work with:
 - Import sorting
 - Prettier integration
 
-### 📦 Install Dependencies
+### 📆 Install Dependencies
 
 ```bash
 bun add -d eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser \
@@ -202,7 +204,7 @@ coverage
 
 ---
 
-## 💻 VSCode Setup
+## 💼 VSCode Setup
 
 Create `.vscode/settings.json`:
 
@@ -281,6 +283,77 @@ The static files will be available in the `storybook-static/` folder. Perfect fo
 
 ---
 
+## 🤀 State Management with Zustand
+
+This boilerplate uses [Zustand](https://github.com/pmndrs/zustand) for global state management.
+
+### 📝 Install Zustand
+
+```bash
+bun add zustand
+```
+
+### 📄 Example Store
+
+```ts
+// src/store/zustand/index.ts
+import { create } from 'zustand';
+
+interface ExampleState {
+    count: number;
+    increment: () => void;
+}
+
+export const useExampleStore = create<ExampleState>((set) => ({
+    count: 0,
+    increment: () => set((state) => ({ count: state.count + 1 })),
+}));
+```
+
+Then use it inside components like:
+
+```tsx
+const count = useExampleStore((state) => state.count);
+const increment = useExampleStore((state) => state.increment);
+```
+
+---
+
+## 🌐 React Router DOM Setup
+
+React Router DOM is used for client-side routing.
+
+### 📦 Install React Router DOM
+
+```bash
+bun add react-router-dom
+```
+
+### 📄 Example Usage
+
+```tsx
+// src/main.tsx
+import { BrowserRouter } from 'react-router-dom';
+
+<BrowserRouter>
+    <App />
+</BrowserRouter>;
+```
+
+```tsx
+// src/presentation/routes/AppRoutes.tsx
+import { Route, Routes } from 'react-router-dom';
+import HomePage from '@/presentation/pages/HomePage';
+
+export const AppRoutes = () => (
+    <Routes>
+        <Route path="/" element={<HomePage />} />
+    </Routes>
+);
+```
+
+---
+
 ## 🔀 Available Scripts
 
 ```bash
@@ -349,6 +422,7 @@ This project comes with a clean and minimal `package.json` setup ideal for worki
 
 - **react / react-dom** → React 19 core
 - **sass** → SCSS support
+- **zustand** → Global state management
 
 ### 🧪 Dev Dependencies
 
@@ -357,7 +431,7 @@ This project comes with a clean and minimal `package.json` setup ideal for worki
 - **@vitejs/plugin-react** → React plugin for Vite
 - **typescript + types** → Full TS support
 
-### 🛠 Install with Bun (recommended)
+### 🛠️ Install with Bun (recommended)
 
 ```bash
 bun install
@@ -373,7 +447,7 @@ yarn install
 
 ---
 
-## 🧪 How to Use This Boilerplate
+## 🤮 How to Use This Boilerplate
 
 ### ✅ Recommended: GitHub Template
 
@@ -393,13 +467,14 @@ That’s it! You have a fresh, clean project ready to build on.
 
 ---
 
-## 🧐 Conclusion
+## 🤔 Conclusion
 
 With this base:
 
 - You get a familiar, clean structure
 - Autoformat and linting out of the box
 - Ready to scale and ship fast
+- State managed easily with Zustand
 
 ---
 
