@@ -479,11 +479,7 @@ This project uses Bun as the default package manager and runtime. Here's why it'
 
 📦 Example:
 
-bun install
-
-# vs
-
-npm install
+### bun install vs npm install
 
 In many cases, Bun is up to 20x faster.
 
