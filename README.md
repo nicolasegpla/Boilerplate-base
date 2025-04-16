@@ -467,10 +467,11 @@ That’s it! You have a fresh, clean project ready to build on.
 
 ---
 
-⚡ Why Bun instead of npm?
+## ⚡ Why Bun instead of npm?
 
 This project uses Bun as the default package manager and runtime. Here's why it's a game-changer for modern frontend workflows:
-⚡ 1. Ridiculously Fast
+
+### ⚡ 1. Ridiculously Fast
 
     Bun is significantly faster than npm or yarn for both installing packages and running scripts.
 
@@ -485,7 +486,8 @@ bun install
 npm install
 
 In many cases, Bun is up to 20x faster.
-🧼 2. Cleaner and leaner
+
+### 🧼 2. Cleaner and leaner
 
     Bun doesn't generate a massive node_modules directory.
 
@@ -493,7 +495,7 @@ In many cases, Bun is up to 20x faster.
 
     Installations are deterministic and super fast from the first run.
 
-🛠️ 3. Batteries included
+### 🛠️ 3. Batteries included
 
 Bun isn’t just a package manager — it’s a toolkit:
 
@@ -506,13 +508,14 @@ Bun isn’t just a package manager — it’s a toolkit:
 | `bun install` | npm install             |
 
 Everything works out of the box, no extra setup needed.
-🤝 4. Fully compatible with npm
+
+### 🤝 4. Fully compatible with npm
 
     Bun uses the npm registry, so you can install any package like you're used to:
 
 bun add react react-dom
 
-🚀 5. Perfect for boilerplates
+### 🚀 5. Perfect for boilerplates
 
 For a project like Rick Boilerplate, Bun provides:
 
@@ -524,7 +527,7 @@ For a project like Rick Boilerplate, Bun provides:
 
     Less config overhead, more coding
 
-🧪 What if you prefer npm or yarn?
+### 🧪 What if you prefer npm or yarn?
 
 No problem. The project isn't Bun-dependent — you can still run:
 
