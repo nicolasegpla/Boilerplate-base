@@ -12,7 +12,15 @@
         "lint:fix": "eslint . --ext .ts,.tsx --fix",
         "storybook": "storybook dev -p 6006",
         "build-storybook": "storybook build",
-        "generate": "bun generate-component.ts"
+        "generate": "bun generate-component.ts",
+        "test": "vitest run",
+        "test:watch": "vitest watch",
+        "test:ui": "vitest --ui",
+        "test:components": "vitest run --project components",
+        "test:viewmodels": "vitest run --project viewmodels",
+        "test:utils": "vitest run --project utils",
+        "test:store": "vitest run --project store",
+        "test:services": "vitest run --project services"
     },
     "dependencies": {
         "react": "^19.0.0",
@@ -31,15 +39,17 @@
         "@storybook/react": "^8.6.12",
         "@storybook/react-vite": "^8.6.12",
         "@storybook/test": "^8.6.12",
+        "@testing-library/jest-dom": "^6.8.0",
+        "@testing-library/react": "^16.3.0",
         "@types/bun": "^1.2.9",
         "@types/node": "^22.14.1",
         "@types/react": "^19.0.10",
         "@types/react-dom": "^19.0.4",
         "@typescript-eslint/eslint-plugin": "^8.29.1",
         "@typescript-eslint/parser": "^8.29.1",
-        "@vitejs/plugin-react": "^4.3.4",
-        "@vitest/browser": "^3.1.1",
-        "@vitest/coverage-v8": "^3.1.1",
+        "@vitejs/plugin-react": "^5.0.2",
+        "@vitest/browser": "3.1.1",
+        "@vitest/coverage-v8": "3.1.1",
         "bun-types": "^1.2.9",
         "eslint": "^9.24.0",
         "eslint-config-prettier": "^10.1.2",
@@ -51,12 +61,13 @@
         "eslint-plugin-react-refresh": "^0.4.19",
         "eslint-plugin-storybook": "^0.12.0",
         "globals": "^15.15.0",
+        "jsdom": "^26.1.0",
         "playwright": "^1.51.1",
         "storybook": "^8.6.12",
         "typescript": "~5.7.2",
         "typescript-eslint": "^8.24.1",
         "vite": "^6.2.0",
-        "vitest": "^3.1.1"
+        "vitest": "3.1.1"
     },
     "eslintConfig": {
         "extends": [

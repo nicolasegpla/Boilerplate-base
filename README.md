@@ -1,4 +1,4 @@
-# 🧱 Rick Project — Frontend Boilerplate Base
+# 🧱 Boilerplate Base — Frontend
 
 This project is a custom base using React + TypeScript designed to be lightweight, modern, and highly productive from minute one.  
 It includes a complete setup with ESLint, Prettier, Barrel Exports, VSCode settings, Sass for global styling, Zustand for state management, and Storybook.
@@ -17,6 +17,7 @@ It includes a complete setup with ESLint, Prettier, Barrel Exports, VSCode setti
 - 📚 Storybook for isolated UI component development
 - 🔋 Zustand for lightweight global state management
 - 🌐 React Router DOM for routing
+- 🧪 Test with Vitest
 
 ---
 
@@ -32,53 +33,54 @@ It includes a complete setup with ESLint, Prettier, Barrel Exports, VSCode setti
 ├── index.html
 ├── package.json
 ├── public
-│   └── vite.svg
+│   └── vite.svg
 ├── src
-│   ├── app
-│   │   ├── App.scss
-│   │   ├── App.tsx
-│   │   └── index.ts
-│   ├── assets
-│   │   └── react.svg
-│   ├── constants
-│   │   └── index.ts
-│   ├── index.scss
-│   ├── main.tsx
-│   ├── presentation
-│   │   ├── components
-│   │   │   ├── atoms
-│   │   │   │   └── index.ts
-│   │   │   ├── index.ts
-│   │   │   ├── molecules
-│   │   │   │   └── index.ts
-│   │   │   └── organisms
-│   │   │       └── index.ts
-│   │   ├── context
-│   │   ├── layouts
-│   │   │   └── index.ts
-│   │   ├── pages
-│   │   ├── routes
-│   │   ├── styles
-│   │   │   ├── _base.scss
-│   │   │   ├── _mixins.scss
-│   │   │   ├── _reset.scss
-│   │   │   ├── _variables.scss
-│   │   │   └── index.scss
-│   │   └── viewmodels
-│   │       └── index.ts
-│   ├── services
-│   │   └── api
-│   │       └── index.ts
-│   ├── store
-│   │   ├── context
-│   │   │   └── index.ts
-│   │   └── zustand
-│   │       └── index.ts
-│   ├── types
-│   │   └── index.ts
-│   ├── utils
-│   │   └── index.ts
-│   └── vite-env.d.ts
+│   ├── app
+│   │   ├── App.scss
+│   │   ├── App.tsx
+│   │   └── index.ts
+│   ├── assets
+│   │   └── react.svg
+│   ├── constants
+│   │   └── index.ts
+│   ├── index.scss
+│   ├── main.tsx
+│   ├── presentation
+│   │   ├── components
+│   │   │   ├── atoms
+│   │   │   │   ├── Button
+│   │   │   │   └── index.ts
+│   │   │   ├── index.ts
+│   │   │   ├── molecules
+│   │   │   │   └── index.ts
+│   │   │   └── organisms
+│   │   │       └── index.ts
+│   │   ├── context
+│   │   ├── layouts
+│   │   │   └── index.ts
+│   │   ├── pages
+│   │   ├── routes
+│   │   ├── styles
+│   │   │   ├── _base.scss
+│   │   │   ├── _mixins.scss
+│   │   │   ├── _reset.scss
+│   │   │   ├── _variables.scss
+│   │   │   └── index.scss
+│   │   └── viewmodels
+│   │       └── index.ts
+│   ├── services
+│   ├── store
+│   │   ├── context
+│   │   │   └── index.ts
+│   │   └── zustand
+│   │       └── index.ts
+│   ├── test
+│   │   └── setup.ts
+│   ├── types
+│   │   └── index.ts
+│   ├── utils
+│   │   └── index.ts
+│   └── vite-env.d.ts
 ├── tsconfig.app.json
 ├── tsconfig.json
 ├── tsconfig.node.json
@@ -282,6 +284,10 @@ The static files will be available in the `storybook-static/` folder. Perfect fo
 - Easily extendable with decorators or themes
 
 ---
+
+## 🧪 Testing
+
+Este proyecto está completamente instrumentado con tests unitarios utilizando Vitest
 
 ## 🤀 State Management with Zustand
 
