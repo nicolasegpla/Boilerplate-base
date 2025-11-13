@@ -6,8 +6,10 @@ services:
         ports:
             - '5173:5173'
         volumes:
-            - .:/app
-            - /app/node_modules
+            - ./src:/app/src
+            - ./public:/app/public
+            - ./vite.config.ts:/app/vite.config.ts
+            - ./tsconfig.json:/app/tsconfig.json
         command: ['bun', 'run', 'dev', '--host']
 
     storybook:
@@ -17,6 +19,7 @@ services:
         ports:
             - '6006:6006'
         volumes:
-            - .:/app
-            - /app/node_modules
+            - ./src:/app/src
+            - ./.storybook:/app/.storybook
+            - ./tsconfig.json:/app/tsconfig.json
         command: ['bun', 'run', 'storybook', '--', '--ci', '--disable-telemetry', '--port', '6006']

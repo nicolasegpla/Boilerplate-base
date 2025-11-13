@@ -1,0 +1,14 @@
+node_modules
+bun.lockb
+dist
+.storybook-out
+.git
+.gitignore
+.vitest
+coverage
+docker-compose.yml
+Dockerfile
+.env
+.env.local
+.env.production
+.env.test
