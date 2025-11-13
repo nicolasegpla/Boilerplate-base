@@ -2,33 +2,18 @@ FROM oven/bun:1 AS base
 
 WORKDIR /app
 
-# Dependencias del sistema
-RUN apt-get update && \
-    apt-get install -y \
-        wget \
-        libx11-6 \
-        libxcomposite1 \
-        libxdamage1 \
-        libxrandr2 \
-        libgbm1 \
-        libgtk-3-0 \
-        libnss3 \
-        libnspr4 \
-        libatk1.0-0 \
-        libatk-bridge2.0-0 \
-        libdrm2 \
-        libxkbcommon0 \
-        libasound2 \
-        libatspi2.0-0 \
-        libdbus-1-3 \
-    && apt-get clean
-
+# Copiar dependencias
 COPY package.json bun.lock ./
+
+# Instalar dependencias
 RUN bun install
 
+# Copiar el resto del proyecto
 COPY . .
 
+# Exponer puertos
 EXPOSE 5173
 EXPOSE 6006
 
+# Comando principal
 CMD ["bun", "run", "dev", "--host"]

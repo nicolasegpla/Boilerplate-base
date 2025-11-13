@@ -6,12 +6,9 @@ services:
         ports:
             - '5173:5173'
         volumes:
-            - ./src:/app/src
-            - ./public:/app/public
-            - ./tsconfig.json:/app/tsconfig.json
-            - ./vite.config.ts:/app/vite.config.ts
-            - playwright-cache:/root/.cache/ms-playwright
-        entrypoint: ['/bin/sh', '-c', 'npx playwright install && bun run dev --host']
+            - .:/app
+            - /app/node_modules
+        command: ['bun', 'run', 'dev', '--host']
 
     storybook:
         build:
@@ -20,16 +17,6 @@ services:
         ports:
             - '6006:6006'
         volumes:
-            - ./src:/app/src
-            - ./.storybook:/app/.storybook
-            - ./tsconfig.json:/app/tsconfig.json
-            - playwright-cache:/root/.cache/ms-playwright
-        entrypoint:
-            [
-                '/bin/sh',
-                '-c',
-                'npx playwright install && bun run storybook -- --ci --disable-telemetry --port 6006',
-            ]
-
-volumes:
-    playwright-cache:
+            - .:/app
+            - /app/node_modules
+        command: ['bun', 'run', 'storybook', '--', '--ci', '--disable-telemetry', '--port', '6006']
