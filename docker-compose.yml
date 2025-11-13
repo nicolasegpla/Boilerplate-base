@@ -1,3 +1,5 @@
+version: '3.9'
+
 services:
     frontend:
         build:
@@ -6,10 +8,15 @@ services:
         ports:
             - '5173:5173'
         volumes:
+            # Montas solo el código que cambia.
             - ./src:/app/src
             - ./public:/app/public
-            - ./vite.config.ts:/app/vite.config.ts
             - ./tsconfig.json:/app/tsconfig.json
+            - ./vite.config.ts:/app/vite.config.ts
+
+            # Volumen persistente para Playwright
+            - playwright-cache:/root/.cache/ms-playwright
+
         command: ['bun', 'run', 'dev', '--host']
 
     storybook:
@@ -22,4 +29,11 @@ services:
             - ./src:/app/src
             - ./.storybook:/app/.storybook
             - ./tsconfig.json:/app/tsconfig.json
+
+            # Volumen persistente para Playwright también para Storybook
+            - playwright-cache:/root/.cache/ms-playwright
+
         command: ['bun', 'run', 'storybook', '--', '--ci', '--disable-telemetry', '--port', '6006']
+
+volumes:
+    playwright-cache:
