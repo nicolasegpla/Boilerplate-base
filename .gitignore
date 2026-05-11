@@ -1,7 +1,6 @@
 # Node / Bun / Lockfiles
 node_modules/
 bun.lockb
-bun.lock
 .pnpm/
 package-lock.json
 yarn.lock

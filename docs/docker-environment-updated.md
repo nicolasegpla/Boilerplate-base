@@ -69,27 +69,27 @@ CMD ["bun", "run", "dev", "--host"]
 
 ```yaml
 services:
-  frontend:
-      build:
-          context: .
-      container_name: bun_frontend
-      ports:
-          - '5173:5173'
-      volumes:
-          - .:/app
-          - /app/node_modules
-      command: ['bun', 'run', 'dev', '--host']
+    frontend:
+        build:
+            context: .
+        container_name: bun_frontend
+        ports:
+            - '5173:5173'
+        volumes:
+            - .:/app
+            - /app/node_modules
+        command: ['bun', 'run', 'dev', '--host']
 
-  storybook:
-      build:
-          context: .
-      container_name: bun_storybook
-      ports:
-          - '6006:6006'
-      volumes:
-          - .:/app
-          - /app/node_modules
-      command: ['bun', 'run', 'storybook', '--', '--ci', '--disable-telemetry', '--port', '6006']
+    storybook:
+        build:
+            context: .
+        container_name: bun_storybook
+        ports:
+            - '6006:6006'
+        volumes:
+            - .:/app
+            - /app/node_modules
+        command: ['bun', 'run', 'storybook', '--', '--ci', '--disable-telemetry', '--port', '6006']
 ```
 
 ---
@@ -107,10 +107,10 @@ docker compose down
 
 ## 6. 🌐 Accesos
 
-| Servicio | URL |
-|----------|-----|
+| Servicio        | URL                   |
+| --------------- | --------------------- |
 | Frontend (Vite) | http://localhost:5173 |
-| Storybook | http://localhost:6006 |
+| Storybook       | http://localhost:6006 |
 
 ---
 

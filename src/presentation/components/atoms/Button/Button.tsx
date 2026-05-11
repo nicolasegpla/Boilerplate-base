@@ -1,13 +1,13 @@
 import './button.scss';
 
 interface ButtonProps {
-    // Agregá tus props acá
+    label?: string;
 }
 
-export const Button = ({}: ButtonProps) => {
+export const Button = ({ label = 'Button' }: ButtonProps) => {
     return (
-        <div className="button">
-            <h2>Button works!</h2>
-        </div>
+        <button type="button" className="button">
+            {label}
+        </button>
     );
 };

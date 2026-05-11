@@ -80,4 +80,15 @@ export default defineWorkspace([
             environment: 'node',
         },
     },
+
+    // 8. Pages (container components)
+    {
+        extends: 'vite.config.ts',
+        test: {
+            name: 'pages',
+            include: ['src/presentation/pages/**/*.test.ts?(x)'],
+            environment: 'jsdom',
+            setupFiles: 'src/test/setup.ts',
+        },
+    },
 ]);

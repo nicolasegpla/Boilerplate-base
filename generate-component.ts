@@ -27,6 +27,7 @@ async function generateComponent(name: string, targetDir: string) {
     const basePath = resolve('src', targetDir, componentName);
 
     if (existsSync(basePath)) {
+        // eslint-disable-next-line no-console
         console.error(`❌ La carpeta "${basePath}" ya existe.`);
         return;
     }
@@ -107,6 +108,7 @@ describe('<${componentName} />', () => {
     const exportLine = `export * from './${componentName}/${componentName}';\n`;
     appendFileSync(barrelPath, exportLine);
 
+    // eslint-disable-next-line no-console
     console.log(`✅ Componente "${componentName}" generado en "src/${targetDir}/${componentName}"`);
 }
 
@@ -115,6 +117,7 @@ describe('<${componentName} />', () => {
 const [name, targetDir] = Bun.argv.slice(2);
 
 if (!name || !targetDir) {
+    // eslint-disable-next-line no-console
     console.error('❌ Usá: bun run generate-component NombreComponente carpeta/destino');
     process.exit(1);
 }

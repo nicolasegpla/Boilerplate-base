@@ -1,0 +1,40 @@
+@use '@/presentation/styles/variables' as vars;
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    gap: vars.$spacing-sm;
+    padding: vars.$spacing-sm;
+    list-style: none;
+
+    &__checkbox {
+        width: 18px;
+        height: 18px;
+        cursor: pointer;
+    }
+
+    &__text {
+        flex: 1;
+        font-size: 1rem;
+
+        .todo-item--completed & {
+            text-decoration: line-through;
+            color: #888;
+        }
+    }
+
+    &__delete {
+        padding: 4px 8px;
+        font-size: 0.875rem;
+        color: vars.$color-danger;
+        background: transparent;
+        border: 1px solid vars.$color-danger;
+        border-radius: vars.$radius;
+        cursor: pointer;
+
+        &:hover {
+            background: vars.$color-danger;
+            color: #fff;
+        }
+    }
+}

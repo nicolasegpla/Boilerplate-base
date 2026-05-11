@@ -1,11 +1,8 @@
 import './App.scss';
+import { AppRouter } from '@/presentation/routes/AppRouter';
 
 function App() {
-    return (
-        <>
-            <h1>hola mundo</h1>
-        </>
-    );
+    return <AppRouter />;
 }
 
 export default App;

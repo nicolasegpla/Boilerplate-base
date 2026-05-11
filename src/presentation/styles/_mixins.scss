@@ -1,0 +1,12 @@
+// =============================================================================
+// SCSS Mixins — Boilerplate Base
+// =============================================================================
+// Reusable mixins that components can import.
+// Add new mixins here as the project grows.
+
+// Centers content both horizontally and vertically using flexbox.
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

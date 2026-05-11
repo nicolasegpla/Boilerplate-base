@@ -1,576 +1,148 @@
 # 🧱 Boilerplate Base — Frontend
 
-This project is a custom base using React + TypeScript designed to be lightweight, modern, and highly productive from minute one.  
-It includes a complete setup with ESLint, Prettier, Barrel Exports, VSCode settings, Sass for global styling, Zustand for state management, and Storybook.
+> Your production-ready React + TypeScript launchpad. Clone, install, run, build.
 
 ---
 
-## 🚀 Features
-
-- ✅ React + Vite + TypeScript
-- 🎯 Simple and familiar architecture
-- 🧼 ESLint with best practice rules
-- 💅 Prettier for automatic formatting
-- 🛆 Barrel Files support
-- 💻 Global styles with Sass
-- ⚡ VSCode configured for format-on-save
-- 📚 Storybook for isolated UI component development
-- 🔋 Zustand for lightweight global state management
-- 🌐 React Router DOM for routing
-- 🧪 Test with Vitest
-
----
-
-## 📁 Final Project Structure
-
-```
-.
-├── README.md
-├── bun.lock
-├── eslint.config.js
-├── estructura.txt
-├── generate-component.ts
-├── index.html
-├── package.json
-├── public
-│   └── vite.svg
-├── src
-│   ├── app
-│   │   ├── App.scss
-│   │   ├── App.tsx
-│   │   └── index.ts
-│   ├── assets
-│   │   └── react.svg
-│   ├── constants
-│   │   └── index.ts
-│   ├── index.scss
-│   ├── main.tsx
-│   ├── presentation
-│   │   ├── components
-│   │   │   ├── atoms
-│   │   │   │   ├── Button
-│   │   │   │   └── index.ts
-│   │   │   ├── index.ts
-│   │   │   ├── molecules
-│   │   │   │   └── index.ts
-│   │   │   └── organisms
-│   │   │       └── index.ts
-│   │   ├── context
-│   │   ├── layouts
-│   │   │   └── index.ts
-│   │   ├── pages
-│   │   ├── routes
-│   │   ├── styles
-│   │   │   ├── _base.scss
-│   │   │   ├── _mixins.scss
-│   │   │   ├── _reset.scss
-│   │   │   ├── _variables.scss
-│   │   │   └── index.scss
-│   │   └── viewmodels
-│   │       └── index.ts
-│   ├── services
-│   ├── store
-│   │   ├── context
-│   │   │   └── index.ts
-│   │   └── zustand
-│   │       └── index.ts
-│   ├── test
-│   │   └── setup.ts
-│   ├── types
-│   │   └── index.ts
-│   ├── utils
-│   │   └── index.ts
-│   └── vite-env.d.ts
-├── tsconfig.app.json
-├── tsconfig.json
-├── tsconfig.node.json
-├── vite.config.ts
-└── vitest.workspace.ts
-```
-
----
-
-## 🔧 ESLint Configuration
-
-ESLint is configured to work with:
-
-- TypeScript
-- React
-- Hooks
-- Import sorting
-- Prettier integration
-
-### 📆 Install Dependencies
+## ⚡ 5-Second Quick Start
 
 ```bash
-bun add -d eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser \
-eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-jsx-a11y eslint-plugin-import \
-eslint-plugin-prettier eslint-config-prettier
+git clone <tu-repo> && cd <tu-proyecto>
+bun install
+bun run dev
 ```
 
-### 📄 `eslint.config.js` (ESM format)
-
-```js
-import js from '@eslint/js';
-import globals from 'globals';
-import tseslint from 'typescript-eslint';
-import reactPlugin from 'eslint-plugin-react';
-import reactHooksPlugin from 'eslint-plugin-react-hooks';
-import jsxA11y from 'eslint-plugin-jsx-a11y';
-import importPlugin from 'eslint-plugin-import';
-import prettier from 'eslint-config-prettier';
-import eslintPluginPrettier from 'eslint-plugin-prettier';
-
-export default [
-    js.configs.recommended,
-    prettier,
-    {
-        files: ['**/*.ts', '**/*.tsx'],
-        languageOptions: {
-            parser: tseslint.parser,
-            parserOptions: {
-                ecmaVersion: 'latest',
-                sourceType: 'module',
-                ecmaFeatures: { jsx: true },
-            },
-            globals: {
-                ...globals.browser,
-                ...globals.node,
-            },
-        },
-        plugins: {
-            '@typescript-eslint': tseslint.plugin,
-            react: reactPlugin,
-            'react-hooks': reactHooksPlugin,
-            'jsx-a11y': jsxA11y,
-            import: importPlugin,
-            prettier: eslintPluginPrettier,
-        },
-        rules: {
-            '@typescript-eslint/no-unused-vars': ['warn'],
-            '@typescript-eslint/explicit-module-boundary-types': 'off',
-            'react/jsx-uses-react': 'off',
-            'react/react-in-jsx-scope': 'off',
-            'react/prop-types': 'off',
-            'react-hooks/rules-of-hooks': 'error',
-            'react-hooks/exhaustive-deps': 'warn',
-            'import/order': [
-                'warn',
-                {
-                    groups: [['builtin', 'external'], 'internal', ['parent', 'sibling', 'index']],
-                    'newlines-between': 'always',
-                },
-            ],
-            'prettier/prettier': 'error',
-            'no-console': 'warn',
-            'no-unused-vars': 'off',
-        },
-        settings: {
-            react: {
-                version: 'detect',
-            },
-        },
-    },
-];
-```
+**That's it.** App runs at `http://localhost:5173`.
 
 ---
 
-## 🎨 Prettier Configuration
+## 🚨 Regla Obligatoria: Usá el Generador
 
-### 📄 `.prettierrc`
-
-```json
-{
-    "tabWidth": 4,
-    "useTabs": false,
-    "semi": true,
-    "singleQuote": true,
-    "trailingComma": "es5",
-    "bracketSpacing": true,
-    "arrowParens": "always",
-    "endOfLine": "auto",
-    "printWidth": 100
-}
-```
-
-### 📄 `.prettierignore`
-
-```
-node_modules
-dist
-build
-coverage
-*.lock
-```
-
----
-
-## 💼 VSCode Setup
-
-Create `.vscode/settings.json`:
-
-```json
-{
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.tabSize": 4,
-    "editor.insertSpaces": true,
-    "editor.detectIndentation": false,
-    "[typescript]": {
-        "editor.tabSize": 4
-    },
-    "[typescriptreact]": {
-        "editor.tabSize": 4
-    },
-    "prettier.tabWidth": 4,
-    "prettier.useTabs": false
-}
-```
-
----
-
-## 📚 Storybook
-
-This project includes **Storybook** preconfigured for documenting and testing components in isolation.
-
-### 🧱 Structure
-
-Stories live alongside components using [Atomic Design](https://bradfrost.com/blog/post/atomic-web-design/) principles:
-
-```
-src/
-└── presentation/
-    └── components/
-        ├── atoms/
-        │   ├── Button.tsx
-        │   └── Button.stories.tsx
-        ├── molecules/
-        └── organisms/
-```
-
-Storybook config files:
-
-```
-.storybook/
-├── main.ts        # Main config: stories, plugins, alias
-├── preview.ts     # Global styles, decorators, parameters
-└── tsconfig.json  # Extends base tsconfig
-```
-
-### 🚀 Run Storybook
+**Todo componente nuevo se crea con el generador, NO a mano.**
 
 ```bash
-bun run storybook
-# or
-npm run storybook
-# or
-yarn storybook
+# Generar un componente átomo
+bun run generate Foo presentation/components/atoms
+
+# Generar un componente molécula
+bun run generate TarjetaProducto presentation/components/molecules
+
+# Generar un organismo
+bun run generate ListaDeTareas presentation/components/organisms
 ```
 
-### 🏗️ Build static version
+Esto crea la carpeta completa: `.tsx` + `.scss` + `.stories.tsx` + `.test.tsx` + barrel export.
+Si lo hacés a mano, no sigue los patrones del boilerplate.
 
-```bash
-bun run build-storybook
-```
+---
 
-The static files will be available in the `storybook-static/` folder. Perfect for publishing to GitHub Pages or any CDN.
+## 🛠️ Quick Reference
 
-### 💡 Features
+| Necesidad          | Comando                                                                              |
+| ------------------ | ------------------------------------------------------------------------------------ |
+| Instalar           | `bun install`                                                                        |
+| Dev server         | `bun run dev`                                                                        |
+| Tests              | `bun run test`                                                                       |
+| Generar componente | `bun run generate NombreCarpeta presentation/components/atoms\|molecules\|organisms` |
+| Agregar feature    | → [Guide](docs/ADD_FEATURE.md)                                                       |
+| Lint               | `bun run lint`                                                                       |
+| Format             | `bun run format`                                                                     |
+| Build              | `bun run build`                                                                      |
+| Storybook          | `bun run storybook`                                                                  |
 
-- Alias `@` support for clean imports
-- Global styles via `index.scss`
-- Ready for addons and visual testing
-- Easily extendable with decorators or themes
+---
+
+## ✨ Stack
+
+- ⚛️ React + Vite + TypeScript
+- 🧼 ESLint + Prettier
+- 🛆 Barrel exports
+- 💅 Sass (design tokens in `_variables.scss`)
+- 📚 Storybook
+- 🔋 Zustand 5 (state)
+- 🌐 React Router DOM
+- 🧪 Vitest (layered testing: store, viewmodels, components, services, utils)
 
 ---
 
 ## 🧪 Testing
 
-Este proyecto está completamente instrumentado con tests unitarios utilizando Vitest
-
-## 🤀 State Management with Zustand
-
-This boilerplate uses [Zustand](https://github.com/pmndrs/zustand) for global state management.
-
-### 📝 Install Zustand
+Run all tests:
 
 ```bash
-bun add zustand
+bun run test
 ```
 
-### 📄 Example Store
+Run tests by layer:
 
-```ts
-// src/store/zustand/index.ts
-import { create } from 'zustand';
+```bash
+bun run test:store     # Zustand store tests
+bun run test:viewmodels # ViewModel tests
+bun run test:components # Component tests
+bun run test:services   # Service tests
+bun run test:utils      # Utility function tests
+```
 
-interface ExampleState {
-    count: number;
-    increment: () => void;
+---
+
+## 🎨 Styling with Sass
+
+Design tokens live in `src/presentation/styles/_variables.scss`:
+
+```scss
+@use '@/presentation/styles/variables' as *;
+
+.my-component {
+    background: $color-primary;
+    padding: $spacing-md;
 }
-
-export const useExampleStore = create<ExampleState>((set) => ({
-    count: 0,
-    increment: () => set((state) => ({ count: state.count + 1 })),
-}));
-```
-
-Then use it inside components like:
-
-```tsx
-const count = useExampleStore((state) => state.count);
-const increment = useExampleStore((state) => state.increment);
 ```
 
 ---
 
-## 🌐 React Router DOM Setup
+## 🧱 Adding a New Feature
 
-React Router DOM is used for client-side routing.
+Read [`docs/ADD_FEATURE.md`](docs/ADD_FEATURE.md) — covers every layer: store → service → viewmodel → components → page → routes → tests.
 
-### 📦 Install React Router DOM
+**Required:** Create components with `bun run generate` (see rule above).
 
-```bash
-bun add react-router-dom
+---
+
+## 📂 Project Structure
+
 ```
-
-### 📄 Example Usage
-
-```tsx
-// src/main.tsx
-import { BrowserRouter } from 'react-router-dom';
-
-<BrowserRouter>
-    <App />
-</BrowserRouter>;
-```
-
-```tsx
-// src/presentation/routes/AppRoutes.tsx
-import { BrowserRouter } from 'react-router-dom';
-import HomePage from '@/presentation/pages/HomePage';
-
-export const AppRoutes = () => (
-    <BrowserRouter>
-        <Route path="/" element={<HomePage />} />
-    </BrowserRouter>
-);
+src/
+├── app/                    # App shell
+├── constants/              # Route paths, storage keys
+├── presentation/
+│   ├── components/         # atoms → molecules → organisms
+│   ├── pages/              # Page containers
+│   ├── routes/             # Router config
+│   ├── styles/             # _variables, _mixins, _base, _reset
+│   └── viewmodels/         # Pure transform functions
+├── services/              # API/service layer
+├── store/zustand/         # Zustand slices
+├── types/                 # Shared TypeScript interfaces
+└── utils/                 # Pure utilities
 ```
 
 ---
 
-## 🔀 Available Scripts
+## 📦 Available Scripts
 
-```bash
-bun run lint        # Run ESLint
-bun run lint:fix    # Automatically fix issues
-bun run format      # Run Prettier on all files
-```
-
----
-
-## 📦 Alias Configuration in `vite.config.ts`
-
-```ts
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-import { fileURLToPath } from 'url';
-import { dirname, resolve } from 'path';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-export default defineConfig({
-    plugins: [react()],
-    resolve: {
-        alias: {
-            '@': resolve(__dirname, './src'),
-        },
-    },
-});
-```
-
-### Example Usage:
-
-```ts
-import { App } from '@/app';
-import { Button } from '@/presentation/components/atoms';
-```
+| Script       | Description              |
+| ------------ | ------------------------ |
+| `dev`        | Start Vite dev server    |
+| `build`      | Production build         |
+| `preview`    | Preview production build |
+| `lint`       | ESLint                   |
+| `lint:fix`   | Auto-fix ESLint          |
+| `format`     | Prettier                 |
+| `storybook`  | Launch Storybook         |
+| `generate`   | Scaffold new component   |
+| `test`       | Run all tests            |
+| `test:watch` | Watch mode               |
 
 ---
 
-## 📦 `package.json` — Description & Commands
-
-This project comes with a clean and extended `package.json` setup, tailored for productivity with React, TypeScript, Sass, Zustand, Storybook, and routing with React Router DOM.
-
-### 📋 General Info
-
-|     Field | Value  |
-| --------: | :----- |
-|    `name` | rick   |
-| `version` | 0.0.0  |
-| `private` | true   |
-|    `type` | module |
-
----
-
-### 🔧 Available Scripts
-
-| Script            | Description                                                |
-| ----------------- | ---------------------------------------------------------- |
-| `dev`             | Starts Vite development server                             |
-| `build`           | Compiles TypeScript and creates production build with Vite |
-| `preview`         | Previews the production build                              |
-| `format`          | Runs Prettier formatting over the project                  |
-| `lint`            | Runs ESLint                                                |
-| `lint:fix`        | Automatically fixes lint issues                            |
-| `storybook`       | Launches Storybook locally                                 |
-| `build-storybook` | Generates static Storybook build                           |
-| `generate`        | Creates a component + SCSS + Storybook with custom script  |
-
----
-
-### 📦 Key Dependencies
-
-| Package              | Purpose                     |
-| -------------------- | --------------------------- |
-| `react`, `react-dom` | Core libraries for React 19 |
-| `react-router-dom`   | Declarative routing         |
-| `zustand`            | Global state management     |
-| `sass`               | SCSS support for styling    |
-
----
-
-### 🧪 Dev Dependencies Highlights
-
-| Package                | Purpose                                |
-| ---------------------- | -------------------------------------- |
-| `eslint` + plugins     | Linting with best practices            |
-| `prettier`             | Auto formatting                        |
-| `typescript` + types   | TypeScript support                     |
-| `@vitejs/plugin-react` | React support in Vite                  |
-| `storybook` + addons   | Component documentation and playground |
-| `vitest`, `playwright` | Testing (unit + e2e)                   |
-| `@types/bun`           | Bun runtime types                      |
-
----
-
-### 🛠️ Install with Bun (recommended)
-
-````bash
-bun install
-
-- Or use npm/yarn if you prefer:
-
-npm install
-# or
-yarn install
-
-
----
-
-## 🤮 How to Use This Boilerplate
-
-### ✅ Recommended: GitHub Template
-
-1. Go to the repo on GitHub.
-2. Click the green `Use this template` button.
-3. Choose a name for your new repository.
-4. Clone it to your local machine:
-
-```bash
-git clone https://github.com/your-username/new-project.git
-cd new-project
-bun install # or npm install / yarn install
-bun run dev
-````
-
-That’s it! You have a fresh, clean project ready to build on.
-
----
-
-## ⚡ Why Bun instead of npm?
-
-This project uses Bun as the default package manager and runtime. Here's why it's a game-changer for modern frontend workflows:
-
-### ⚡ 1. Ridiculously Fast
-
-    Bun is significantly faster than npm or yarn for both installing packages and running scripts.
-
-    It's built with low-level performance in mind (written in Zig).
-
-📦 Example:
-
-### bun install vs npm install
-
-In many cases, Bun is up to 20x faster.
-
-### 🧼 2. Cleaner and leaner
-
-    Bun doesn't generate a massive node_modules directory.
-
-    No noisy package-lock.json or yarn.lock.
-
-    Installations are deterministic and super fast from the first run.
-
-### 🛠️ 3. Batteries included
-
-Bun isn’t just a package manager — it’s a toolkit:
-
-| Tool          | Replaces...             |
-| ------------- | ----------------------- |
-| `bun`         | npm, yarn               |
-| `bun run`     | npm run                 |
-| `bun test`    | jest, vitest (partial)  |
-| `bun serve`   | webpack-dev-server, etc |
-| `bun install` | npm install             |
-
-Everything works out of the box, no extra setup needed.
-
-### 🤝 4. Fully compatible with npm
-
-    Bun uses the npm registry, so you can install any package like you're used to:
-
-bun add react react-dom
-
-### 🚀 5. Perfect for boilerplates
-
-For a project like Rick Boilerplate, Bun provides:
-
-    Faster setup times
-
-    Better DX (Developer Experience)
-
-    Cleaner scripts
-
-    Less config overhead, more coding
-
-### 🧪 What if you prefer npm or yarn?
-
-No problem. The project isn't Bun-dependent — you can still run:
-
-npm install
-npm run dev
-
-Everything will just work.
-TL;DR
-
-    Bun is fast, modern, and all-in-one.
-    It’s the Ferrari of JavaScript runtimes.
-    But if you’re more comfortable with a minivan — npm is still welcome. 🛻
-
----
-
-## 🤔 Conclusion
-
-With this base:
-
-- You get a familiar, clean structure
-- Autoformat and linting out of the box
-- Ready to scale and ship fast
-- State managed easily with Zustand
-
----
-
-> This is your new launchpad for all frontend projects. Let’s build! 🚀
+> Next: [Add a Feature →](docs/ADD_FEATURE.md)

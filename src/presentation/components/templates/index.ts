@@ -1,0 +1,2 @@
+// templates barrel
+export type {};

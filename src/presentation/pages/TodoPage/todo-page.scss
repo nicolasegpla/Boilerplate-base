@@ -1,0 +1,62 @@
+@use '@/presentation/styles/variables' as vars;
+
+.todo-page {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: vars.$spacing-lg;
+
+    &__title {
+        font-size: 1.75rem;
+        margin-bottom: vars.$spacing-sm;
+    }
+
+    &__stats {
+        font-size: 0.875rem;
+        color: #666;
+        margin-bottom: vars.$spacing-md;
+    }
+
+    &__form {
+        display: flex;
+        gap: vars.$spacing-sm;
+        margin-bottom: vars.$spacing-md;
+    }
+
+    &__input {
+        flex: 1;
+        padding: 8px 12px;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: vars.$radius;
+        outline: none;
+
+        &:focus {
+            border-color: vars.$color-primary;
+        }
+    }
+
+    &__add-btn {
+        padding: 8px 16px;
+        font-size: 1rem;
+        color: #fff;
+        background: vars.$color-primary;
+        border: none;
+        border-radius: vars.$radius;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.9;
+        }
+
+        &:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+    }
+
+    &__loading {
+        text-align: center;
+        color: #888;
+        font-style: italic;
+    }
+}

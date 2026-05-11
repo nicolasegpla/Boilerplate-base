@@ -1,0 +1,16 @@
+@use '@/presentation/styles/variables' as vars;
+
+.todo-list {
+    display: flex;
+    flex-direction: column;
+    gap: vars.$spacing-sm;
+    margin: 0;
+    padding: 0;
+
+    &__empty {
+        text-align: center;
+        color: #888;
+        font-style: italic;
+        padding: vars.$spacing-md;
+    }
+}

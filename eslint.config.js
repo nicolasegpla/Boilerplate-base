@@ -61,4 +61,7 @@ export default [
             },
         },
     },
+    {
+        ignores: ['dist/**', 'storybook-static/**', '.vite/**', '*.tsbuildinfo'],
+    },
 ];

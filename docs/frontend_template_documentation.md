@@ -15,12 +15,12 @@ Este proyecto es un **template base profesional** para iniciar aplicaciones Fron
 
 Solo necesitas:
 
-- Git  
-- Docker Desktop  
+- Git
+- Docker Desktop
 
 ✔ No es necesario instalar Node  
 ✔ No es necesario instalar Bun  
-✔ No es necesario instalar Vite ni Storybook  
+✔ No es necesario instalar Vite ni Storybook
 
 ---
 
@@ -41,10 +41,10 @@ docker compose up
 
 Servicios disponibles:
 
-| Servicio  | Puerto | URL                       |
-|-----------|--------|---------------------------|
-| frontend  | 5173   | http://localhost:5173     |
-| storybook | 6006   | http://localhost:6006     |
+| Servicio  | Puerto | URL                   |
+| --------- | ------ | --------------------- |
+| frontend  | 5173   | http://localhost:5173 |
+| storybook | 6006   | http://localhost:6006 |
 
 ---
 
@@ -79,17 +79,17 @@ Servicios disponibles:
 ### ✔ Tests generales
 
 ```bash
-docker compose exec frontend bun test
+docker compose exec frontend bun run test
 ```
 
 ### ✔ Tests por proyecto
 
 ```bash
-docker compose exec frontend bun test:components
-docker compose exec frontend bun test:viewmodels
-docker compose exec frontend bun test:utils
-docker compose exec frontend bun test:store
-docker compose exec frontend bun test:services
+docker compose exec frontend bun run test:components
+docker compose exec frontend bun run test:viewmodels
+docker compose exec frontend bun run test:utils
+docker compose exec frontend bun run test:store
+docker compose exec frontend bun run test:services
 ```
 
 ---
@@ -131,7 +131,7 @@ docker compose up --build
 
 Este template te permite:
 
-- Crear proyectos frontend en segundos  
-- Ejecutar Vite y Storybook dentro de Docker  
-- Usar testing modular por proyectos  
-- Mantener una arquitectura profesional y escalable  
+- Crear proyectos frontend en segundos
+- Ejecutar Vite y Storybook dentro de Docker
+- Usar testing modular por proyectos
+- Mantener una arquitectura profesional y escalable

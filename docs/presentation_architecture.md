@@ -32,6 +32,7 @@ Cada subcarpeta cumple con una responsabilidad específica, siguiendo Atomic Des
 # 🧩 1. `components/`
 
 ### Propósito
+
 Almacenar los componentes UI puramente presentacionales, siguiendo **Atomic Design**.
 
 ---
@@ -41,6 +42,7 @@ Almacenar los componentes UI puramente presentacionales, siguiendo **Atomic Desi
 Los **átomos** son los componentes UI más básicos del sistema.
 
 ### Ejemplos:
+
 - `Input`
 - `Label`
 - `Button`
@@ -48,6 +50,7 @@ Los **átomos** son los componentes UI más básicos del sistema.
 - `Icon`
 
 ### Reglas:
+
 - Sin lógica interna.
 - Solo reciben props mínimas.
 - Muy reutilizables.
@@ -60,10 +63,12 @@ Los **átomos** son los componentes UI más básicos del sistema.
 Una **molécula** es una composición de varios átomos funcionando como una unidad coherente.
 
 ### Ejemplos:
+
 - `EmailField`
 - `PasswordField`
 
 ### Reglas:
+
 - Siguen siendo presentational.
 - Contienen reglas menores de UI.
 - No manejan estado global ni llaman servicios.
@@ -75,10 +80,12 @@ Una **molécula** es una composición de varios átomos funcionando como una uni
 Los **organismos** son bloques grandes de UI que contienen moléculas y átomos.
 
 ### Ejemplos:
+
 - `LoginForm`
 - `UserTable`
 
 ### Reglas:
+
 - Presentational: **NO son Smart Components**.
 - Reciben datos y callbacks desde el Container.
 - Representan secciones completas de UI.
@@ -90,10 +97,12 @@ Los **organismos** son bloques grandes de UI que contienen moléculas y átomos.
 Los **templates** definen la estructura visual general de una página, sin lógica.
 
 ### Ejemplos:
+
 - `AuthTemplate`
 - `DashboardTemplate`
 
 ### Reglas:
+
 - Componen Organisms.
 - No manejan lógica.
 - No contienen estado.
@@ -109,14 +118,17 @@ Archivo para barrel exports.
 # 🧠 2. `context/`
 
 ### Propósito
+
 Contextos globales de **UI** (no de negocio).
 
 ### Ejemplos válidos:
+
 - Tema
 - Idioma
 - Sidebar abierto/cerrado
 
 ### Reglas:
+
 - No manejar autenticación.
 - No manejar lógica de dominio.
 - No llamar casos de uso.
@@ -126,13 +138,16 @@ Contextos globales de **UI** (no de negocio).
 # 🏛️ 3. `layouts/`
 
 ### Propósito
+
 Definir el layout global de la aplicación (Shell UI).
 
 ### Ejemplos:
+
 - `MainLayout`
 - `AuthLayout`
 
 ### Reglas:
+
 - Sin lógica de negocio.
 - Solo estructura visual.
 
@@ -141,9 +156,11 @@ Definir el layout global de la aplicación (Shell UI).
 # 🛣️ 4. `routes/`
 
 ### Propósito
+
 Gestionar el árbol de rutas de la aplicación.
 
 ### Reglas:
+
 - No mezclar lógica UI/domino.
 - No renderizar componentes específicos.
 - Solo configuración.
@@ -153,9 +170,11 @@ Gestionar el árbol de rutas de la aplicación.
 # 🎨 5. `styles/`
 
 ### Propósito
+
 Centralizar estilos globales.
 
 ### Ejemplos:
+
 - Variables CSS
 - Reset
 - Tipografías
@@ -165,9 +184,11 @@ Centralizar estilos globales.
 # 🧩 6. `viewmodels/`
 
 ### Propósito
+
 Adaptar datos de dominio → UI.
 
 ### Reglas:
+
 - Funciones puras.
 - No hacer fetch.
 - No lógica de negocio.
@@ -178,6 +199,7 @@ Adaptar datos de dominio → UI.
 # 🖼️ 7. `views/`
 
 ### Propósito
+
 Agrupar las vistas de la aplicación.  
 Cada vista se divide en Presentational + Container:
 
@@ -187,11 +209,13 @@ FeaturePage.container.tsx  → Smart Component
 ```
 
 ### El Presenter:
+
 - No tiene lógica.
 - Recibe props ya transformadas.
 - Solo compone Templates y Organisms.
 
 ### El Container:
+
 - Maneja estado.
 - Ejecuta casos de uso.
 - Mapea datos a ViewModels.
@@ -200,12 +224,12 @@ FeaturePage.container.tsx  → Smart Component
 
 # 📌 Principios Generales
 
-1. Los componentes presentacionales **no manejan lógica de negocio**.  
-2. El estado vive en Containers o Context UI.  
-3. Los Organisms **no deben ser Smart**.  
-4. Los Molecules encapsulan composición repetitiva.  
-5. Los Atoms son UI mínima sin lógica.  
-6. Los ViewModels transforman datos para la UI.  
+1. Los componentes presentacionales **no manejan lógica de negocio**.
+2. El estado vive en Containers o Context UI.
+3. Los Organisms **no deben ser Smart**.
+4. Los Molecules encapsulan composición repetitiva.
+5. Los Atoms son UI mínima sin lógica.
+6. Los ViewModels transforman datos para la UI.
 7. La capa de presentación **no conoce** dominio ni infraestructura.
 
 ---
@@ -214,10 +238,10 @@ FeaturePage.container.tsx  → Smart Component
 
 Esta arquitectura garantiza:
 
-- Reusabilidad  
-- Escalabilidad  
-- Testabilidad  
-- Orden y mantenimiento a largo plazo  
-- Separación estricta entre UI, lógica y dominio  
+- Reusabilidad
+- Escalabilidad
+- Testabilidad
+- Orden y mantenimiento a largo plazo
+- Separación estricta entre UI, lógica y dominio
 
 Lista para proyectos de nivel empresarial.

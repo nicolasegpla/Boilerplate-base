@@ -1,0 +1,7 @@
+@use '@/presentation/styles/variables' as vars;
+
+.app {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: vars.$spacing-lg;
+}

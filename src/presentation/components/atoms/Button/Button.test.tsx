@@ -6,6 +6,11 @@ import { Button } from './Button';
 describe('<Button />', () => {
     it('should render without crashing', () => {
         render(<Button />);
-        expect(screen.getByText('Button works!')).toBeInTheDocument();
+        expect(screen.getByRole('button')).toBeInTheDocument();
+    });
+
+    it('should display the label text', () => {
+        render(<Button label="Click me" />);
+        expect(screen.getByText('Click me')).toBeInTheDocument();
     });
 });
