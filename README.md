@@ -16,23 +16,24 @@ bun run dev
 
 ---
 
-## 🚨 Regla Obligatoria: Usá el Generador
+## 🚨 Regla Obligatoria: Componentes con el Generador + Story Funcional
 
-**Todo componente nuevo se crea con el generador, NO a mano.**
+**Todo componente nuevo se crea con el generador y DEBE tener una story funcional.**
 
 ```bash
 # Generar un componente átomo
 bun run generate Foo presentation/components/atoms
-
-# Generar un componente molécula
-bun run generate TarjetaProducto presentation/components/molecules
-
-# Generar un organismo
-bun run generate ListaDeTareas presentation/components/organisms
 ```
 
 Esto crea la carpeta completa: `.tsx` + `.scss` + `.stories.tsx` + `.test.tsx` + barrel export.
-Si lo hacés a mano, no sigue los patrones del boilerplate.
+
+**La story es mínima (base mecánico) — completala con la skill `storybook-stories`:**
+
+1. Abrí la `.stories.tsx` generada
+2. Consultá la skill `storybook-stories` para mapear props → args
+3. Llená `args: {}` con valores sensatos según el tipo de cada prop
+
+> Si editás componentes a mano sin el generador, no siguen los patrones del boilerplate.
 
 ---
 
@@ -45,6 +46,7 @@ Si lo hacés a mano, no sigue los patrones del boilerplate.
 | Tests              | `bun run test`                                                                       |
 | Generar componente | `bun run generate NombreCarpeta presentation/components/atoms\|molecules\|organisms` |
 | Agregar feature    | → [Guide](docs/ADD_FEATURE.md)                                                       |
+| Completar story     | → skill `storybook-stories` para args sensatos                                        |
 | Lint               | `bun run lint`                                                                       |
 | Format             | `bun run format`                                                                     |
 | Build              | `bun run build`                                                                      |

@@ -1,6 +1,6 @@
 # Add a Feature Guide
 
-## 🚨 Regla Obligatoria: Componentes con el Generador
+## 🚨 Regla Obligatoria: Generador + Story Funcional
 
 **Antes de agregar una feature, creá los componentes con el generador.**
 
@@ -10,8 +10,10 @@ bun run generate Foo presentation/components/molecules
 bun run generate Foo presentation/components/organisms
 ```
 
-Esto crea la carpeta completa con `.tsx`, `.scss`, `.stories.tsx`, `.test.tsx` y el barrel export actualizado.
+El generador crea la carpeta completa con `.tsx`, `.scss`, `.stories.tsx`, `.test.tsx` y barrel export.
 **No crees componentes a mano** — el generador asegura que todos sigan el mismo patrón.
+
+**Completá la story siempre:** el generador deja `args: {}` vacío. Usá la skill `storybook-stories` para mapear props → args sensatos.
 
 ---
 
@@ -219,7 +221,7 @@ describe('myEntityViewModel', () => {
 
 ## Step 6: Components (Atomic Design)
 
-### ⚠️ Usá el Generador
+### ⚠️ Usá el Generador + Completá la Story
 
 ```bash
 # Para moléculas
@@ -230,7 +232,7 @@ bun run generate MyEntityList presentation/components/organisms
 ```
 
 El generador crea la carpeta completa con `.tsx`, `.scss`, `.stories.tsx`, `.test.tsx` + barrel export.
-Luego editá los archivos generados según tufeature.
+**Luego completá la story:** el `args: {}` queda vacío. Consultá la skill `storybook-stories` para llenarlo con args sensatos.
 
 ### Actualizar el Stylesheet
 
