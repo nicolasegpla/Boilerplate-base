@@ -13,5 +13,19 @@ export default meta;
 type Story = StoryObj<typeof Button>;
 
 export const Primary: Story = {
-    args: {},
+    args: {
+        label: 'Button',
+    },
+};
+
+export const CustomLabel: Story = {
+    args: {
+        label: 'Click me',
+    },
+};
+
+export const LongLabel: Story = {
+    args: {
+        label: 'This is a very long button label that wraps',
+    },
 };

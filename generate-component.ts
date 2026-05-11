@@ -74,6 +74,7 @@ export default meta;
 type Story = StoryObj<typeof ${componentName}>;
 
 export const Primary: Story = {
+    // TODO: Add args based on component props — see storybook-stories skill
     args: {},
 };
 `;

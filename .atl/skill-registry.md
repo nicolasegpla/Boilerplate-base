@@ -22,6 +22,7 @@
 | playwright | E2E tests                                        | ✅ AVAILABLE | Available for browser testing                  |
 | ai-sdk-5   | AI chat features                                 | ✅ AVAILABLE | Vercel AI SDK patterns                         |
 | sdd-\*     | SDD workflow                                     | ✅ AVAILABLE | All SDD phases loaded                          |
+| storybook-stories | Creating or editing Storybook stories       | ✅ AVAILABLE | Prop-type mapping, level-based rules, mock conventions |
 
 ## Available Commands
 
