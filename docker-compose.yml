@@ -2,21 +2,44 @@ services:
     frontend:
         build:
             context: .
+            target: dev
         container_name: bun_frontend
         ports:
             - '5173:5173'
         volumes:
             - .:/app
-            - /app/node_modules
+            - node_modules_volume:/app/node_modules
         command: ['bun', 'run', 'dev', '--host']
+        healthcheck:
+            test: ["CMD-SHELL", "bun -e \"process.exit((await fetch('http://localhost:5173')).ok ? 0 : 1)\""]
+            start_period: 60s
+            interval: 30s
+            retries: 5
+            timeout: 10s
+        restart: unless-stopped
 
     storybook:
         build:
             context: .
+            target: dev
         container_name: bun_storybook
         ports:
             - '6006:6006'
         volumes:
             - .:/app
-            - /app/node_modules
+            - node_modules_volume:/app/node_modules
         command: ['bun', 'run', 'storybook', '--', '--ci', '--disable-telemetry', '--port', '6006']
+        restart: unless-stopped
+
+    test:
+        build:
+            context: .
+            target: test-runner
+        container_name: bun_test
+        volumes:
+            - .:/app
+        command: ['sh', '-c', 'bun run test:components && bun run test:viewmodels && bun run test:utils && bun run test:store && bun run test:services']
+        restart: 'no'
+
+volumes:
+    node_modules_volume:

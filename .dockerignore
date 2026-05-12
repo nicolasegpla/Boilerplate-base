@@ -1,14 +1,32 @@
+# Dependencies
 node_modules
 bun.lockb
+
+# Build outputs
 dist
 .storybook-out
+
+# Version control
 .git
 .gitignore
+
+# Test coverage
 .vitest
 coverage
-docker-compose.yml
-Dockerfile
+
+# Environment files
 .env
 .env.local
 .env.production
 .env.test
+
+# IDE and editor
+.vscode
+.idea
+
+# Agent/CI configs
+.atl
+
+# Documentation (keep docker-environment-updated.md in image)
+*.md
+!docs/docker-environment-updated.md
